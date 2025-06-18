@@ -7,7 +7,7 @@ const adminRoutes = require('./routes/adminRoutes');
 
 const app = express();
 app.use(cors({
-  origin: 'gully-cricket-team-maker.vercel.app',
+  origin: 'https://gully-cricket-team-maker.vercel.app',
   credentials: true
 }));
 
