@@ -16,7 +16,7 @@ const PlayerForm = () => {
 
   const fetchPlayers = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/players", {
+      const res = await axios.get("https://gully-cricket-team-maker.onrender.com/api/players", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setPlayers(res.data);
@@ -32,7 +32,7 @@ const PlayerForm = () => {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/players",
+        "https://gully-cricket-team-maker.onrender.com/api/players",
         {
           name,
           role,
@@ -53,7 +53,7 @@ const PlayerForm = () => {
 
 const handleDeletePlayer = async (id) => {
   try {
-    await axios.delete(`http://localhost:5000/api/players/${id}`, {
+    await axios.delete(`https://gully-cricket-team-maker.onrender.com/api/players/${id}`, {
       headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
     });
     fetchPlayers(); // Refresh list
@@ -85,7 +85,7 @@ useEffect(() => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/players/generate",
+        "https://gully-cricket-team-maker.onrender.com/api/players/generate",
         { selectedPlayerIds }, // send selected IDs
         {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },

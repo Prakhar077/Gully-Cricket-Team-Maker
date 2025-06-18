@@ -10,7 +10,7 @@ const AdminPanel = () => {
 
   const fetchAdmins = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/admins", {
+      const res = await axios.get("https://gully-cricket-team-maker.onrender.com/api/admins", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -25,7 +25,7 @@ const AdminPanel = () => {
   const createAdmin = async () => {
     try {
       await axios.post(
-        "http://localhost:5000/api/admins",
+        "https://gully-cricket-team-maker.onrender.com/api/admins",
         { username, password },
         {
           headers: {
@@ -43,7 +43,7 @@ const AdminPanel = () => {
 
   const deleteAdmin = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/admins/${id}`, {
+      await axios.delete(`https://gully-cricket-team-maker.onrender.com/api/admins/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

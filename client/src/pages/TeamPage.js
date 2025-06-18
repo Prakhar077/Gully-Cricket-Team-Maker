@@ -14,7 +14,7 @@ useEffect(() => {
       const selectedIds = JSON.parse(localStorage.getItem("selectedPlayerIds") || "[]");
 
       const res = await axios.post(
-        "http://localhost:5000/api/players/generate",
+        "https://gully-cricket-team-maker.onrender.com/api/players/generate",
         { selectedPlayerIds: selectedIds }, // Proper body
         {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
