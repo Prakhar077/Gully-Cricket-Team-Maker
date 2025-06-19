@@ -13,7 +13,7 @@ exports.login = async (req, res) => {
     return res.json({ token, role: 'SUPER_ADMIN' });
   }
 
-  const result = await pool.query('SELECT * FROM users WHERE username = $1', [username]);
+  const result = await pool.query('SELECT * FROM admins WHERE username = $1', [username]);
   const user = result.rows[0];
   if (!user) return res.status(400).json({ message: 'Invalid credentials' });
 
